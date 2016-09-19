@@ -10,9 +10,12 @@ namespace ToDoList.Models
     {
         public virtual DbSet<Item> Items { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        public ToDoListContext(DbContextOptions<ToDoListContext> options) : base(options)
         {
-            options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ToDoList;integrated security=True");
+        }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
         }
     }
 }
