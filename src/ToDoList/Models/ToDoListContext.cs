@@ -8,11 +8,16 @@ namespace ToDoList.Models
 {
     public class ToDoListContext : DbContext
     {
-        public virtual DbSet<Item> Items { get; set; }
+        public DbSet<Item> Items { get; set; }
 
         public ToDoListContext(DbContextOptions<ToDoListContext> options) : base(options)
         {
         }
+
+        public ToDoListContext()
+        {
+        }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

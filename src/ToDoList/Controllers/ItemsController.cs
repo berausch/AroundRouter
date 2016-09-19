@@ -12,7 +12,8 @@ namespace ToDoList.Controllers
 {
     public class ItemsController : Controller
     {
-        private ToDoListContext db = new ToDoListContext();
+        public ToDoListContext db = new ToDoListContext();
+
         public IActionResult Index()
         {
             return View(db.Items.ToList());
