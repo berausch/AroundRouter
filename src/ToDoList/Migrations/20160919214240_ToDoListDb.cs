@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ToDoList.Migrations
 {
-    public partial class ToDoList : Migration
+    public partial class ToDoListDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
