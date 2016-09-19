@@ -14,13 +14,10 @@ namespace ToDoList.Tests.ControllerTests
         [Fact]
         public void Get_ViewResult_Index_Test()
         {
-            //Arrange
             ItemsController controller = new ItemsController();
 
-            //Act
             var result = controller.Index();
 
-            //Assert
             Assert.IsType<ViewResult>(result);
         }
 
@@ -35,6 +32,19 @@ namespace ToDoList.Tests.ControllerTests
 
             Assert.IsType<List<Item>>(result);
         }
-           
+         
+        [Fact]
+        public void Post_MethodAddsItem_Test()
+        {
+            ItemsController controller = new ItemsController();
+            Item testItem = new Item();
+            testItem.Description = "Test Item";
+
+            controller.Create(testItem);
+            ViewResult indexView = new ItemsController().Index() as ViewResult;
+            var collection = indexView.ViewData.Model as IEnumerable<Item>;
+
+            Assert.Contains<Item>(testItem, collection);
+        } 
     }
 }

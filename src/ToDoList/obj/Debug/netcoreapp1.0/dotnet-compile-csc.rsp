@@ -200,3 +200,5 @@
 "C:\Users\epicodus\Desktop\ToDoList\src\ToDoList\Migrations\ToDoListContextModelSnapshot.cs"
 "C:\Users\epicodus\Desktop\ToDoList\src\ToDoList\Models\Item.cs"
 "C:\Users\epicodus\Desktop\ToDoList\src\ToDoList\Models\ToDoListContext.cs"
+"C:\Users\epicodus\Desktop\ToDoList\src\ToDoList\Models\Repositories\EFItemRepository.cs"
+"C:\Users\epicodus\Desktop\ToDoList\src\ToDoList\Models\Repositories\IItemRepository.cs"

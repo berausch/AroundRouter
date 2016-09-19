@@ -13,5 +13,23 @@ namespace ToDoList.Models
         [Key]
         public int ItemId { get; set; }
         public string Description { get; set; }
+        public override bool Equals(System.Object otherItem)
+        {
+            if (otherItem is Item)
+            {
+                Item newItem = (Item)otherItem;
+                return this.ItemId.Equals(newItem.ItemId);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.ItemId.GetHashCode();
+        }
     }
+
 }
