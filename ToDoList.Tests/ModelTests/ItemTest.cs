@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ToDoList.Models;
+using AroundRouter.Models;
 using Xunit;
 
-namespace ToDoList.Tests
+namespace AroundRouter.Tests
 {
-    public class ItemTest
+    public class LocationTest
     {
         [Fact]
         public void GetDescriptionTest()
         {
-            var item = new Item();
-            item.Description = "Wash the Parakeet";
-            var result = item.Description;
+            var Location = new Location();
+            Location.Description = "Wash the Parakeet";
+            var result = Location.Description;
             Assert.Equal("Wash the Parakeet", result);
         }
     }

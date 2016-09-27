@@ -1,0 +1,15 @@
+﻿@{ 
+    ViewData["Title"] = "Locations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<AroundRouter.Models.Location>
+
+<h2>To Do List</h2>
+<h4>@Html.DisplayNameFor(model =>model.Description)</h4>
+<ul>
+    @foreach(var listLocation in Model)
+    {
+        <li>@Html.DisplayFor(modelLocation => listLocation.Description) | @Html.ActionLink("Details", "Details", new { id = listLocation.LocationId }) |@Html.ActionLink("Edit", "Edit", new { id = listLocation.LocationId }) | @Html.ActionLink("Delete", "Delete", new { id = listLocation.LocationId })</li>
+    }
+</ul>
+<p>@Html.ActionLink("Add New Location", "Create")</p>

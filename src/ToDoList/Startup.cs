@@ -10,9 +10,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using ToDoList.Models;
+using AroundRouter.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace ToDoList
+namespace AroundRouter
 {
     public class Startup
     {
@@ -29,18 +30,22 @@ namespace ToDoList
             services.AddMvc();
 
             services.AddEntityFramework()
-                 .AddDbContext<ToDoListContext>(options =>
+                 .AddDbContext<AroundRouterContext>(options =>
                      options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseIdentity();
             loggerFactory.AddConsole();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Account}/{action=Index}/{id?}");
             });
            
             if (env.IsDevelopment())

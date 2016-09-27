@@ -10,11 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ToDoList", "src\ToDoList\ToDoList.xproj", "{BFFBE781-B420-47DE-A791-21B47ADC28CA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AB0EEF7D-96D1-45FE-87C5-C747F91548FA}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ToDoList.Tests", "ToDoList.Tests\ToDoList.Tests.xproj", "{A301E878-526D-40E1-9635-75CE45564964}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AroundRouter", "src\ToDoList\AroundRouter.xproj", "{BFFBE781-B420-47DE-A791-21B47ADC28CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,16 +22,11 @@ Global
 		{BFFBE781-B420-47DE-A791-21B47ADC28CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFFBE781-B420-47DE-A791-21B47ADC28CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFFBE781-B420-47DE-A791-21B47ADC28CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A301E878-526D-40E1-9635-75CE45564964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A301E878-526D-40E1-9635-75CE45564964}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A301E878-526D-40E1-9635-75CE45564964}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A301E878-526D-40E1-9635-75CE45564964}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BFFBE781-B420-47DE-A791-21B47ADC28CA} = {BB1C123E-3023-4A9B-BE31-3060DFE98FB8}
-		{A301E878-526D-40E1-9635-75CE45564964} = {AB0EEF7D-96D1-45FE-87C5-C747F91548FA}
 	EndGlobalSection
 EndGlobal

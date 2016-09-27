@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Controllers;
-using ToDoList.Models;
+using AroundRouter.Controllers;
+using AroundRouter.Models;
 using Xunit;
 
-namespace ToDoList.Tests.ControllerTests
+namespace AroundRouter.Tests.ControllerTests
 {
-    public class ItemsControllerTest
+    public class LocationsControllerTest
     {
         [Fact]
         public void Get_ViewResult_Index_Test()
         {
-            ItemsController controller = new ItemsController();
+            LocationsController controller = new LocationsController();
 
             var result = controller.Index();
 
@@ -24,27 +24,27 @@ namespace ToDoList.Tests.ControllerTests
         [Fact]
         public void Get_ModelList_Index_Test()
         {
-            ItemsController controller = new ItemsController();
+            LocationsController controller = new LocationsController();
             IActionResult actionResult = controller.Index();
             ViewResult indexView = controller.Index() as ViewResult;
 
             var result = indexView.ViewData.Model;
 
-            Assert.IsType<List<Item>>(result);
+            Assert.IsType<List<Location>>(result);
         }
          
         [Fact]
-        public void Post_MethodAddsItem_Test()
+        public void Post_MethodAddsLocation_Test()
         {
-            ItemsController controller = new ItemsController();
-            Item testItem = new Item();
-            testItem.Description = "Test Item";
+            LocationsController controller = new LocationsController();
+            Location testLocation = new Location();
+            testLocation.Description = "Test Location";
 
-            controller.Create(testItem);
-            ViewResult indexView = new ItemsController().Index() as ViewResult;
-            var collection = indexView.ViewData.Model as IEnumerable<Item>;
+            controller.Create(testLocation);
+            ViewResult indexView = new LocationsController().Index() as ViewResult;
+            var collection = indexView.ViewData.Model as IEnumerable<Location>;
 
-            Assert.Contains<Item>(testItem, collection);
+            Assert.Contains<Location>(testLocation, collection);
         } 
     }
 }
