@@ -21,5 +21,6 @@ namespace AroundRouter.Models
         public int RouteId { get; set; }
         public string Name { get; set; }
         public virtual ICollection<Location> Locations { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

@@ -19,6 +19,8 @@ namespace AroundRouter.Models
         public string Zip { get; set; }
         public virtual Route Route { get; set; }
 
+        
+
         public override bool Equals(System.Object otherLocation)
         {
             if (otherLocation is Location)

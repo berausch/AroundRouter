@@ -16,5 +16,16 @@ namespace AroundRouter.Models
         {
 
         }
+
+
+
+        public DbSet <Route> Routes { get; set; }
+
+        public DbSet<Location> Locations { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
     }
 }

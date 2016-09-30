@@ -1,0 +1,18 @@
+﻿@{ 
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model AroundRouter.Models.Route
+
+<h2>Add a new Route</h2>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+    <input type="submit" value="Create" />
+}
+@Html.ActionLink("Back to List", "Index")

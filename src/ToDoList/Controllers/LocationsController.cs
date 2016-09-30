@@ -13,7 +13,7 @@ namespace AroundRouter.Controllers
     public class LocationsController : Controller
     {
 
-        private AroundRouterContext db = new AroundRouterContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public IActionResult Index()
         {

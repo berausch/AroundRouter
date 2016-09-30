@@ -1,0 +1,29 @@
+﻿@{ 
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using System.Security.Claims
+
+@model IEnumerable<AroundRouter.Models.Route>
+
+<h2>Here are your routes, @User.Identity.Name</h2>
+<hr />
+
+@if (Model.Any())
+{
+    <ul>
+        @foreach (var listRoute in Model)
+        {
+            <li>@Html.DisplayFor(modelRoute => listRoute.Name)</li>
+
+        }
+    </ul>
+}
+else
+{
+    <p>No Routes have been added yet!</p>
+}
+
+
+@Html.ActionLink("Create new", "Create")
